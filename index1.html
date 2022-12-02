@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第一次</title>
+  <style type="text/css">
+  body{
+	background: darkgrey;
+  }
+  td{
+	text-align:right;
+	font-size:20px;
+  }
+  div{
+	border:1.5px solid black;
+	background:tan;
+  }
+  button{
+	font-size:3em;
+  }
+  #first{
+	height:70%;
+	width:100%;
+	font-size:60px;
+	text-align:center;
+  }
+  #second{
+	height:70%;
+	width:100%;
+	font-size:55px;
+	text-align:center;
+  }
+  </style>
+ </head>
+ <body>
+ <div id="first">
+ 沁园春·长沙
+    <table>
+    <tr>
+		<td>------【现代】毛泽东</td>
+ 	</tr>
+   </table>
+ </div>
+ <div id="second"></div>
+ <input type="button" value="上一句" onclick="prev()" id="c" style="font-size:2em;margin-left:75%;">
+ <input type="button" value="下一句" onclick="next()" id="d" style="font-size:2em;">
+ <script type="text/javascript">
+	var a="独立寒秋，湘江北去，橘子洲头。看万山红遍，层林尽染；漫江碧透，百舸争流。鹰击长空，鱼翔浅底，万类霜天竞自由。怅寥廓，问苍茫大地，谁主沉浮？。携来百侣曾游，忆往昔峥嵘岁月稠。恰同学少年，风华正茂；书生意气，挥斥方遒。指点江山，激扬文字，粪土当年万户侯。曾记否，到中流击水，浪遏飞舟。"
+	var b=a.split("。");
+	var p=document.getElementById("second");
+		p.textContent=b[0];
+	var i=0;
+	var c=document.getElementById("c");
+		c.onclick=function prev(){i--;p.textContent=b[i];if(i==-1){alert("已经到头了");i=0;p.textContent=b[i]}}
+	var d=document.getElementById("d");
+		d.onclick=function next(){i++;p.textContent=b[i];if(i==8){alert("已经到底了");i=7;p.textContent=b[i]}}
+ </script>
+ </body>
+</html>
