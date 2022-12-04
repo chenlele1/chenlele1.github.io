@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        动态DOM编程起点和基础
+    </title>
+    <style type="text/css">
+        div{
+            width:100px;
+            height:100px;
+            background-color:gray;
+            border: 1px solid rgb(100,100,200);           
+            display: inline-block;
+            margin: 10px;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            
+        }
+    </style>
+
+</head>
+<body>
+<script type="text/javascript">
+   <!--
+    var s='绝代有佳人，幽居在空谷。自云良家子，零落依草木。';
+    for (var i=0;i<100;i++) {
+        var divDom = document.createElement('div');
+        divDom.textContent = s;
+        randPositionDiv(divDom);
+        document.body.appendChild(divDom);
+    }
+    function randPositionDiv(dom) {
+        var x=Math.floor(Math.random()*600);
+        var y=Math.floor(Math.random()*400);
+        dom.style.left=x+'px';
+        dom.style.top=y+'px';
+
+    }
+    //-->
+</script>
+</body>
+</html>
+
