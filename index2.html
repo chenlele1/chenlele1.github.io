@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body{
+            margin:0 auto;
+            width:550px;
+        }
+        h1{
+            font-size:3em;
+            text-align:center;}
+        p{
+            font-size:1.5em;
+        }
+        span{
+            color:blue;
+            font-size:2em;
+        }
+        input{
+            font-size:2em;
+        }
+    </style>
+    <title>完善猜数游戏</title>
+</head>
+<body>
+<p>
+    从0到1000，请你写下一个数字!<br>
+    并如实回答电脑每次猜的偏差，最多10次，就可猜中！
+</p>
+<span id="times">第1次</span><h1 id="num">500</h1>
+<input id="small"type="button"value="数字小了">
+<input id="big"type="button"value="数字大了">
+<input id="restart"type="button"value="再来一局">
+<script type="text/javascript">
+    <!--
+    var num=500;
+    var times=1;
+    var topNum=1000;
+    var botNum=0;
+    document.querySelector("input#big").onclick=function(){
+        topNum=Math.floor((botNum+topNum)/2);
+        num=Math.floor((botNum+topNum)/2);
+        document.querySelector("h1#num").textContent='我猜：'+num;
+        times++;
+        document.querySelector("span#times").textContent="第"+times+"次";
+        yourAreCheating();
+    } //end of onclick "数字大了"
+    document.querySelector("input#small").onclick=function(){
+        botNum=num+1;
+        num=Math.floor((botNum+topNum)/2);
+        document.querySelector("h1#num").textContent='我猜：'+num;
+        times++;
+        document.querySelector("span#times").textContent="第"+times+"次";
+        yourAreCheating();
+    } //end of onclick "数字小了"
+    document.querySelector("input#restart").onclick=function(){
+        num=500;
+        botNum=0;
+        topNum=1000;
+        times=1;
+        document.querySelector("span#times").textContent="第"+times+"次";
+        document.querySelector("h1#num").textContent='我猜：'+num;
+    }
+    function yourAreCheating(){
+        if(times>10){
+            document.querySelector("h1#num").textContent="你耍赖了！";
+            times=10;
+        }
+    }
+    //-->
+</script>
+</body>
+</html>
