@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0">
+    <title>
+        小学一年级算术训练（20以内）
+    </title>
+    <style>
+        body{
+            font-size:20px;
+            margin:auto;
+        }
+        input{
+            font-size:2em;
+            width:4em;
+        }
+        input[type=button]{
+            width:3em;
+            margin-right:1em;
+        }
+        span#op{
+            font-size:3em;
+            color:red;
+            font-weight:bolder;
+        }
+        h1#output{
+            color:rgb(0,200,100);
+            background-color:pink;
+            position:absolute;
+            right:1em;
+            top:2.2em;
+            text-decoration:underline;
+        }
+        input#next{
+            width:6em;
+        }
+    </style>
+</head>
+<body>
+<h1>小学数学加减法（20以内）</h1>
+<h1 id="output">加油！</h1>
+<div id='question'>
+    <input id="opNum1"type="text"readonly>
+    <span id="op">+</span>
+    <input id="opNum2"type="text"readonly>
+</div>
+<div id='answer'>
+    A.<input type="button"value="20"id="answerA">
+    B.<input type="button"value="21"id="answerB">
+    <br/>
+    C.<input type="button"value="22"id="answerC">
+    D.<input type="button"value="23"id="answerD">
+</div>
+<input type="button"value="下一题"id="next">
+<script type="text/javascript">
+    <!--
+    var opNumArr1=randIntArray(10);
+    var opNumArr2=randIntArray(10);
+    var answerArr=[];
+    for(var i=0;i<opNumArr1.length;i++){
+        answerArr[i]=opNumArr1[i]+opNumArr2[i];
+    }
+    functionrandIntArray(n){
+        var arr=[];
+        for(var i=0;i<n;i++){
+            var rand=Math.floor(Math.random()*n);
+            if(arr.indexOf(rand)!==-1){
+                i--;
+            }else{
+                arr[i]=rand;
+            }
+        } //End of for loop N
+        returnarr;
+    } //End of function randIntArray ( n )
+    //console.log ( randIntArray ( 20 ) ) ;
+    var opNum1Dom=document.querySelector("input#opNum1");
+    var opNum2Dom=document.querySelector("input#opNum2");
+    var outputDom=document.querySelector("h1#output");
+    var answerDoms=document.querySelectorAll("div#answerinput");
+    var sn=0;
+    function createMath(){
+        opNum1Dom.value=opNumArr1[sn];
+        opNum2Dom.value=opNumArr2[sn];
+        var answer=answerArr[sn];
+        var rightSn=Math.floor(Math.random()*4);
+        for(var i=0;i<4;i++){
+            if(i===rightSn){
+                answerDoms[i].value=answer;
+            }else{
+                var sign=1;
+                if(Math.random()>0.5){
+                    sign=-1;
+                }
+                answerDoms[i].value=answer+sign*(1+Math.floor(Math.random()*4));
+            }
+            answerDoms[i].onclick=function(){
+                var sel=parseInt(this.value);
+                if(sel===answer){
+                    outputDom.textContent='恭喜！你答对了';
+                }else{
+                    outputDom.textContent='你答错了，再试一试！';
+                }
+            }; //End answerDoms [ i ] .onclick
+        } //End of for loop 
+        if(sn===9){
+            sn=0;
+        }else{
+            sn++;
+        }
+    } //End of function createMath ( )
+    createMath();
+    document.querySelector('input#next').onclick=createMath;
+    //-->
+</script>
+</body>
+</html>
