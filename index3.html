@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1>
+    color:
+</h1>
+R:<input type="text" value="0" id="r">
+G:<input type="text" value="0" id="g">
+B:<input type="text" value="0" id="b">
+<button>change color</button>
+<script>
+    alert("let'begin!")
+    var h1=document.body.querySelector("h1");
+    var ok=document.body.querySelector("button");
+    var input=document.body.querySelectorAll("input");
+    document.body.ondblclick=function(){
+        h1.style.color="rgb(0,105,0)";
+    }
+    ok.onclick=function(){
+        var r=document.querySelector("#r").value;
+//alert(typeof r);
+        var g=document.querySelector("#g").value;
+        var b=document.querySelector("#b").value;
+//h1.style.color="rgb(0,105,0)";
+    }
+</script>
+</body>
+</html>
