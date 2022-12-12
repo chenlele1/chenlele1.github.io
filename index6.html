@@ -12,22 +12,22 @@
             background-color: deepskyblue; 	 
             box-sizing: border-box ;
             border:1px solid rgb(100,100,200) ; 	 
-            border-radius: 20% ;
+            border-radius: 30% ;
             margin: 0 ;
             padding: 0 ;
             position: absolute ;
             transition: all 0.5s ;
         }
         div.bd{ 
-            background-color:rgba(70,160,150,0.5); 	
+            background-color:rgba(37, 218, 197, 0.5); 	
             border:0px solid ;
-            border-radius: 20% ;
+            border-radius: 30% ;
         }
         div p{ margin: auto;
             padding: 10%;
             color:rgb(60,200,80);
             text-align:center;
-            text-shadow:1px 1px rgb(0,100,100);
+            text-shadow:1px 1px rgb(17, 228, 228);
         }
     </style>
 </head>
@@ -36,8 +36,7 @@
     const NUMS = 11;
     var tsBalls = [] ;
     var sn = 0 ;
-    const S = ['考生的信息，20JAVA一班。陈乐乐，20202986。君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马、千金裘，呼儿将出换美酒，与尔同销万古愁
-'] ;
+    const S = ['考生的信息，20JAVA一班。20202986陈乐乐。君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马、千金裘，呼儿将出换美酒，与尔同销万古愁'] ;
     document.body.onmousemove = document.body.ontouchmove = function(){
         for(let ball of tsBalls){
             ball.setPositionDiv() ;
@@ -80,7 +79,7 @@
             pDom.textContent = s ;
             pDom.style.fontSize = r/2 + 'px' ;
             divDom.style.width = divDom.style.height = r + 'px' ;
-            if(this.x0 === 5 || this.x0 === 11 ){ divDom.className = 'bd' ; } divDom.appendChild(pDom) ;
+            if(this.x0 === 1 || this.x0 === 3|| this.x0 === 5|| this.x0 === 7|| this.x0 === 9 ){ divDom.className = 'bd' ; } divDom.appendChild(pDom) ;
             document.body.appendChild(divDom) ;
             this.dom = divDom ; };
         this.randPositionDiv = function(){
