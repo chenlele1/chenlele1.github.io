@@ -2,75 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>20计科一班陈乐乐 </title>
-    <style type="text/css">
-        body{ 	 
-            margin: 0 ;
-            cursor: pointer;
+    <title>20计科一班陈乐乐20202986</title>
+    <style>
+        body{
+            background: linear-gradient(rgb(242, 132, 242),rgb(82, 194, 228));
         }
-        div{ 	 
-            background-color: deepskyblue; 	 
-            box-sizing: border-box ;
-            border:1px solid rgb(100,100,200) ; 	 
-            border-radius: 30% ;
-            margin: 0 ;
-            padding: 0 ;
-            position: absolute ;
-            transition: all 0.5s ;
-        }
-        div.bd{ 
-            background-color:rgba(37, 218, 197, 0.5); 	
-            border:0px solid ;
-            border-radius: 30% ;
-        }
-        div p{ margin: auto;
-            padding: 10%;
-            color:rgb(60,200,80);
-            text-align:center;
-            text-shadow:1px 1px rgb(17, 228, 228);
+        div{
+            height: 100px;
+            width: 100px;
+            margin: 5px;
+            word-break: break-all;
+            background-color: rgb(66, 243, 125);
+            display: inline-block;
+            border-radius: 30%;
+            opacity: 0.5;
+            position: relative;
+            transition: all 0.3s;
         }
     </style>
 </head>
 <body>
 <script type="text/javascript">
-    const NUMS = 11;
-    var tsBalls = [] ;
-    var sn = 0 ;
-    const S = ['考生的信息，20JAVA一班。20202986陈乐乐。君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马、千金裘，呼儿将出换美酒，与尔同销万古愁'] ;
-    document.body.onmousemove = document.body.ontouchmove = function(){
-        for(let ball of tsBalls){
-            ball.setPositionDiv() ;
+    var s='春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。';
+    for (var i=0;i<100;i++) {
+        var divDom = document.createElement('div');
+        divDom.textContent = s;
+        divDom.style.display = 'inline-block';
+        document.body.appendChild(divDom);
+    }
+    let dom = document.querySelectorAll('div')
+    for(let i=0;i<dom.length;i++){
+        dom[i].onmouseover = function(){
+        var x=Math.floor(Math.random()*600);
+        var y=Math.floor(Math.random()*400);
+        dom[i].style.left=x+'px';
+        dom[i].style.top=y+'px';
         }
     };
-    document.body.onclick = function(){
-        for(let ball of tsBalls){
-            ball.randPositionDiv() ;
-        }
-    };
-    document.body.ondblclick = function(){
-        console.log('double click');
-        for(let ball of tsBalls){
-            this.removeChild(ball.dom) ;
-        } tsBalls = [] ;
-        sn === S.length -1 ? sn = 0 : sn++ ;
-        for(var i=0 ;i < S[sn].length ; i++){
-            var x0 = i % NUMS ; var y0 = Math.floor ( i / NUMS ) ;
-            var ballObj = new Ball( x0 , y0 ) ;
-            ballObj.createDivDom(S[sn][i]) ;
-            ballObj.randPositionDiv() ;
-            tsBalls.push(ballObj) ; } };
-    var bodyWidth = window.innerWidth ;
-    var bodyHeight = window.innerHeight ;
-    document.body.style.width = bodyWidth + 'px';
-    document.body.style.height = bodyHeight + 'px' ;
-    var r = bodyWidth > bodyHeight ? bodyHeight / (NUMS*3/2) : bodyWidth / (NUMS*3/2) ;
-    for(var i=0 ;i < S[sn].length ; i++){
-        var x0 = i % NUMS ;
-        var y0 = Math.floor ( i / NUMS ) ;
-        var ballObj = new Ball( x0 , y0 ) ;
-        ballObj.createDivDom(S[sn][i]) ;
-        ballObj.randPositionDiv() ;
-        tsBalls.push(ballObj) ; }
     function Ball(x0 , y0){
         this.x0 = x0 ; this.y0 = y0 ; this.dom = null ;
         this.createDivDom = function(s){
@@ -82,7 +50,7 @@
             if(this.x0 === 1 || this.x0 === 3|| this.x0 === 5|| this.x0 === 7|| this.x0 === 9 ){ divDom.className = 'bd' ; } divDom.appendChild(pDom) ;
             document.body.appendChild(divDom) ;
             this.dom = divDom ; };
-        this.randPositionDiv = function(){
+            this.randPositionDiv = function(){
             var x = Math.floor(Math.random() * bodyWidth ) ;
             if(x >= bodyWidth - r){ x = bodyWidth - r ; }
             var y = Math.floor( Math.random() * bodyHeight );
@@ -94,7 +62,7 @@
             var y = parseInt(this.y0) * r * 1.2 ;
             this.dom.style.left = x + r + 'px' ;
             this.dom.style.top = y + r + 'px' ; } ; };
+    
 </script>
-
 </body>
 </html>
